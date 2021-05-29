@@ -1,0 +1,43 @@
+import Head from "next/head";
+import React from "react";
+import { convertYouTubeUrlToID } from "../utils/converter";
+
+type Props = {
+  url: string;
+  width?: string;
+  height?: string;
+};
+
+const YouTubeVideo = (props: Props) => {
+  const width = props.width ?? "1280"; // YouTube default value: 560
+  const height = props.width ?? "720"; // YouTube default value: 315
+
+  const YouTubeID = convertYouTubeUrlToID(props.url);
+  const videoUrl =
+    "https://www.youtube.com/embed/" +
+    YouTubeID +
+    "?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1";
+
+  https: return (
+    <>
+      <Head>
+        <script
+          type="text/javascript"
+          src="/js/custom-youtube-player.js"
+        ></script>
+      </Head>
+      <div className="hytPlayerWrapOuter">
+        <div className="hytPlayerWrap">
+          <iframe
+            width={width}
+            height={height}
+            src={videoUrl}
+            frameBorder="0"
+          ></iframe>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default YouTubeVideo;

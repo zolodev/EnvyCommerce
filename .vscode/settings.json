@@ -1,0 +1,24 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "jest.autoEnable": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.addMissingImports",
+    "source.fixAll"
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  "css.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "javascript"
+  },
+  "tailwindCSS.colorDecorators": "on",
+  "tailwindCSS.emmetCompletions": true
+}
