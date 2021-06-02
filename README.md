@@ -5,8 +5,9 @@
 To be able to run this project, make sure you have the prerequisite in order and the latest version of the following application listed below.
 
 - NodeJS
-- Yarn 
+- Yarn
 - [Fira-code](https://github.com/tonsky/FiraCode/wiki/Installing) (font to make sure vscode code looks nice)
+- Run the script `scripts/install-vscode-extensions.sh` to install the necessary vscode extensions
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
