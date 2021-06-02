@@ -1,26 +1,35 @@
 # EnvyCommerce
 
+Production ready: **NO**.
+
+This project is still a _Work in Progress_.
+If you want to support the cause and our work please reach out by creating an issue.
+
 ## Background to EnvyCommerce
 
-### The why
+Everything start from something, an idea or vison. This is a short story about why we are doing what we believe in, to bring amazing people together. To create an amazing experience for others and to bring joy into sharing.
 
-Many people dream of starting their own eCommerce business. When they start researching and looking around on the internet, they often find the more common solutions like `shopify`, `BigCommerce` or `WooCommerce`. These solutions can offer an easy and quick way to get started with an eCommerce. Their services look like great choices to begin with.
+### Why you should not Envy others
+
+Many people have a dream of starting their own eCommerce business. When they start researching and looking around on the internet, they often find the more common solutions like `shopify`, `BigCommerce` or `WooCommerce`. These solutions can offer an easy and quick way to get started with an eCommerce. Their services look like great choices to begin with.
 What all these solutions have in common is that they do not tell you that it will lock you into their specific solution or that you have to sell your products for an overprice in order to make a small amount of money (if any), due to the fee they take from you as a customer.
 
-### The how
+### How others will Envy you
 
 This is why we started to create **EnvyCommerce**!
 
-We want to make a great eCommerce **FOR FREE** for **you**! If you have a start-up or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will get 100% revenue of everything you sell!
+We want to make a great, secure and easy to use eCommerce **FOR FREE** for **you**! If you have a start-up or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will get 100% revenue of everything you sell!
 
-With no hidden fees due to the nature of _Open Source_ and where we strive to keep down the maintenance cost to a bare minimum. Where you as the store owner get all the revenue, with an exception for the `payment service` (one to begin with) and `domain name` of your choices. With **no vendor lock-in**. We plan for _your_ `exit strategy` and believe you should be able to switch _from_ EnvyCommerce to any other solution of _your_ choice in the future. By using standard formats like _Markdown_ files to make the transition as easy and painless as possible when that time comes.
+With no hidden fees due to the nature of _Open Source_ and where we strive to keep down the maintenance cost to the bare minimum. Where you as the store owner get all the revenue, with an exception for the `payment service` (we provide one to begin with) and `domain name` of your choices and **no vendor lock-in**. We plan for _your_ `exit strategy` and believe you should have the right to choose and to be able to switch _from_ EnvyCommerce to any other solution of _your_ choice in the future. By using standard formats like _Markdown_ files for pages and products, to make the transition as easy and painless as possible when that time comes. For you to focus on your business instad of maintaining your eCommerce.
 
-We wish you to be a successfull store owner and on your journey, we hope you will provide feedback to improve this product. That you believe in sharing as we do.
+We wish you to be a successfull store owner and on your journey; we hope you will provide feedback to improve EvnyCommerce. That you believe in sharing your thoughts and story with ous as we do.
 
-### What makes us do it?
+### What makes us, Envy
 
 Sharing is caring!
-This is why we believe in Open Source and why this project is licensed under [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE).
+This is why we believe in Open Source and why this project is licensed under [GNU GENERAL PUBLIC LICENSE, Version 3](/LICENSE).
+
+By sharing and minimize the _Envy_ out in the world.
 
 Good luck and we (the EnvyCommerce community) hope to hear from you and that you enjoy using EnvyCommerce.
 
