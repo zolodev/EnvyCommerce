@@ -12,17 +12,18 @@ Everything start from something, an idea or vison. This is a short story about w
 ### Why you should not Envy others
 
 Many people have a dream of starting their own eCommerce business. When they start researching and looking around on the internet, they often find the more common solutions like `shopify`, `BigCommerce` or `WooCommerce`. These solutions can offer an easy and quick way to get started with an eCommerce. Their services look like great choices to begin with.
-What all these solutions have in common is that they do not tell you that it will lock you into their specific solution or that you have to sell your products for an overprice in order to make a small amount of money (if any), due to the fee they take from you as a customer.
+What all these solutions have in common is that they do not tell you that it will lock you into their specific solution or that you have to sell your products for an overprice in order to make a small amount of money (if any), due to the fee they take from you as a customer and/or maintaience cost for hosting your own.
 
 ### How others will Envy you
 
 This is why we started to create **EnvyCommerce**!
 
-We want to make a great, secure and easy to use eCommerce **FOR FREE** for **you**! If you have a start-up or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will get 100% revenue of everything you sell!
+We want to make a fast, SEO friendly and easy to use eCommerce **FOR FREE** for **you**! If you have a start-up or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will get 100% revenue of everything you sell!
 
-With no hidden fees due to the nature of _Open Source_ and where we strive to keep down the maintenance cost to the bare minimum. Where you as the store owner get all the revenue, with an exception for the `payment service` (we provide one to begin with) and `domain name` of your choices and **no vendor lock-in**. We plan for _your_ `exit strategy` and believe you should have the right to choose and to be able to switch _from_ EnvyCommerce to any other solution of _your_ choice in the future. By using standard formats like _Markdown_ files for pages and products, to make the transition as easy and painless as possible when that time comes. For you to focus on your business instad of maintaining your eCommerce.
+With no hidden fees (from us) due to the nature of _Open Source_ and where we strive to keep down the maintenance cost to the bare minimum. By using modern web development solutions, so you can **host it for FREE**. Where you as the store owner get all the revenue, with an exception for the `payment service` (we provide one solution to begin with) and `domain name` of your choices with **no vendor lock-in**.
+We also plan for _your_ `exit strategy` and believe you should have the right to choose and to be able to move _from_ EnvyCommerce to any other solution of _your_ choice in the future. By using standard formats like _Markdown_ files for pages and products, to make the transition as easy and painless as possible when that time comes. For you to focus on your business instead of maintaining the technical parts of your eCommerce.
 
-We wish you to be a successfull store owner and on your journey; we hope you will provide feedback to improve EvnyCommerce. That you believe in sharing your thoughts and story with ous as we do.
+We wish you to be a successfull store owner and on your journey; we hope you will provide feedback to improve EnvyCommerce. That you believe in sharing your thoughts and story with ous as we love to hear about your success.
 
 ### What makes us, Envy
 
@@ -31,7 +32,7 @@ This is why we believe in Open Source and why this project is licensed under [GN
 
 By sharing and minimize the _Envy_ out in the world.
 
-Good luck and we (the EnvyCommerce community) hope to hear from you and that you enjoy using EnvyCommerce.
+We (the EnvyCommerce community) wish you the best of luck and hope to hear from you and that you enjoy using EnvyCommerce.
 
 ## Adding Pages or Products
 
