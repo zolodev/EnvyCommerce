@@ -19,7 +19,7 @@ What all these solutions have in common is that they do not tell you that it wil
 
 This is why we started to create **EnvyCommerce**!
 
-We want to make a fast, SEO friendly and easy to use eCommerce **FOR FREE** for **you**! If you have a start-up or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will **get 100% revenue of everything you sell!**
+We want to make a fast, SEO friendly and easy to use eCommerce **FOR FREE** for **you**! If you have a startup or a small to medium size businesses. EnvyCommerce is the perfect platform to start with. Where you as the store owner will **get 100% revenue of everything you sell!**
 
 With no hidden fees (from us) due to the nature of _Open Source_ and where we strive to keep down the maintenance cost to the bare minimum. By using modern web development technologies, so you can **host it for FREE**. Where you as the store owner get all the revenue, with an exception for the `payment service` (we provide one solution to begin with) and `domain name` of your choices with **no vendor lock-in**.
 We also plan for _your_ `exit strategy` and believe you should have the right to choose and to be able to move _from_ EnvyCommerce to any other solution of _your_ choice in the future. By using standard formats like _Markdown_ files for pages and products, to make the transition as easy and painless as possible when that time comes. For you to **focus on your business** instead of maintaining the technical parts of your eCommerce.
