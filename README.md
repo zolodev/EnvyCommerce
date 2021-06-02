@@ -6,6 +6,7 @@ To be able to run this project, make sure you have the prerequisite in order and
 
 - NodeJS
 - Yarn 
+- [Fira-code](https://github.com/tonsky/FiraCode/wiki/Installing) (font to make sure vscode code looks nice)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
