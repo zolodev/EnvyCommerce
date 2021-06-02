@@ -1,3 +1,12 @@
+# EnvyCommerce
+
+## Prerequisite
+
+In order to be able to run this project you will need the following, so make sure you have these installed.
+
+- NodeJS
+- Yarn 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
