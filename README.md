@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-In order to be able to run this project, make sure you have the prerequisite in order and the latest version of the following application listed below.
+To be able to run this project, make sure you have the prerequisite in order and the latest version of the following application listed below.
 
 - NodeJS
 - Yarn 
