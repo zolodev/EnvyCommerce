@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-In order to be able to run this project you will need the following, so make sure you have these installed.
+In order to be able to run this project you will need the following, so make sure you have the following prerequisite installed.
 
 - NodeJS
 - Yarn 
