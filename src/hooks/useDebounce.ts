@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 
-function useDebounce(value: any, delay: number) {
+const useDebounce = (value: any, delay: number) => {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -31,6 +31,6 @@ function useDebounce(value: any, delay: number) {
   );
 
   return debouncedValue;
-}
+};
 
 export default useDebounce;
