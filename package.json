@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
     "marked": "^2.0.3",
     "next": "10.2.0",
