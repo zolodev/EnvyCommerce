@@ -1,11 +1,17 @@
 import { shallow } from "enzyme";
-import Home from "../src/pages/index";
+import Home, { getStaticProps } from "../src/pages/index";
 
 const wrapper = shallow(<Home />);
 
 // `describe` is not required, but it helps the tests read nicely
-describe("The Home Page Component", () => {
+describe("Page - Test The Home Page Component", () => {
   // Each test for the component will get an `it` block
+
+  beforeEach(() => {
+    process.env = Object.assign(process.env, {
+      NEXT_PUBLIC_FILTER_KEYS: "name, description",
+    });
+  });
   it("should have exactly 1 `main` section", () => {
     // The getByRole will error if there are less or more than 1 element found
     expect(wrapper.find("main").type()).toBe("main");
@@ -20,5 +26,21 @@ describe("The Home Page Component", () => {
     expect(searchField.props().placeholder).toBe(
       "Search and filter products..."
     );
+  });
+
+  it("can get static props, allProducts", () => {
+    getStaticProps().then((data) => {
+      expect(data).toBeDefined();
+      expect(data.props.allProducts).toBeDefined();
+    });
+  });
+  it("can get static props, filtered keys from .env varible", () => {
+    const expected = {
+      props: { filterKeys: ["name", "description"] },
+    };
+    getStaticProps().then((data) => {
+      expect(data.props.filterKeys).toBeDefined();
+      expect(data.props.filterKeys).toMatchObject(expected.props.filterKeys);
+    });
   });
 });
