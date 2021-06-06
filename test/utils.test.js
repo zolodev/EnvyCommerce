@@ -236,20 +236,14 @@ describe("Test the utils", () => {
 
   describe("Test constants", () => {
     it("can get all default Filter keys", () => {
-      const expected = ["name"];
-      getAllFilterKeys().then((allKeys) => {
-        expect(allKeys).toMatchObject(expected);
-      });
+      expect(getAllFilterKeys()).toMatchObject(["name"]);
     });
     it("can get Filter keys passed via .env variabel", () => {
       process.env = Object.assign(process.env, {
         NEXT_PUBLIC_FILTER_KEYS: "name, description",
       });
 
-      const expected = ["name", "description"];
-      getAllFilterKeys().then((allKeys) => {
-        expect(allKeys).toMatchObject(expected);
-      });
+      expect(getAllFilterKeys()).toMatchObject(["name", "description"]);
     });
   });
 });

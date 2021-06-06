@@ -1,4 +1,4 @@
-export const getAllFilterKeys = async () =>
+export const getAllFilterKeys = () =>
   process.env.NEXT_PUBLIC_FILTER_KEYS
     ? process.env.NEXT_PUBLIC_FILTER_KEYS?.toString()
         .replace(/\s+/g, "")

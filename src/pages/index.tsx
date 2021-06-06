@@ -40,8 +40,8 @@ const Home = (props: any) => {
 };
 
 export const getStaticProps = async () => {
+  const filterKeys: string[] = getAllFilterKeys();
   const allProducts: Product[] = await getAllPublishedProducts();
-  const filterKeys: string[] = await getAllFilterKeys();
 
   return {
     props: {
