@@ -20,6 +20,7 @@ describe("Test the utils", () => {
         expect(convertedPrice).toBe("$20.99");
       });
     });
+
     describe("Test convert date and time", () => {
       it("can convert local date from string to local Date", () => {
         const convertedDate = convertLocalDateTime({
@@ -184,15 +185,13 @@ describe("Test the utils", () => {
   });
 
   describe("Test imageInfo", () => {
-    const defaultImageDataProperties = {
-      src: "/images/DefaultNoImage.webp",
-      alt: "No image description available for /images/DefaultNoImage.webp",
-      isDefaultImage: true,
-    };
-
     it("can provide default data from getImageData", () => {
-      const imageData = getImageData();
-      expect(imageData).toMatchObject(defaultImageDataProperties);
+      const defaultImageDataProperties = {
+        src: "/images/DefaultNoImage.webp",
+        alt: "No image description available for /images/DefaultNoImage.webp",
+        isDefaultImage: true,
+      };
+      expect(getImageData()).toMatchObject(defaultImageDataProperties);
     });
     it("can return by src", () => {
       const imageData = getImageData("/my/test/path/to/image.jpg");
@@ -206,6 +205,14 @@ describe("Test the utils", () => {
   });
 
   describe("Test isPublished", () => {
+    it("can determin if parameter is of type date, as true", () => {
+      expect(isPublished(new Date("2020-02-01"))).toBeTruthy();
+    });
+    it("can determin if both parameters is of type date, as true", () => {
+      expect(
+        isPublished(new Date("2020-02-01"), new Date("9999-12-31"))
+      ).toBeTruthy();
+    });
     it("can determin if publish date is now, as true", () => {
       expect(isPublished("2020-01-01")).toBeTruthy();
     });
@@ -214,6 +221,9 @@ describe("Test the utils", () => {
     });
     it("can determin if publish date has been (outdated or overdue), as false", () => {
       expect(isPublished("2020-01-01", "2020-02-01")).toBeFalsy();
+    });
+    it("can determin if reversed order, as false", () => {
+      expect(isPublished("2020-02-01", "2020-01-01")).toBeFalsy();
     });
     it("can determin if no valid publish, as false", () => {
       expect(isPublished("No Valid Date")).toBeFalsy();
