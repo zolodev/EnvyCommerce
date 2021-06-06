@@ -1,7 +1,6 @@
 {
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "jest.autoEnable": false,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
 
@@ -19,6 +18,6 @@
   "tailwindCSS.includeLanguages": {
     "plaintext": "javascript"
   },
-  "tailwindCSS.colorDecorators": "on",
+  "tailwindCSS.colorDecorators": true,
   "tailwindCSS.emmetCompletions": true
 }
