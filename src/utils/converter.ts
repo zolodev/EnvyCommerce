@@ -17,16 +17,16 @@ type ConvertOptions = {
   stringDateToConvert: string;
   includeTime?: boolean;
 };
-export const convertLocalDateTime = ({
-  stringDateToConvert: dateToConvert,
-  includeTime = false,
-}: ConvertOptions) => {
-  const _convertedDate = new Date(dateToConvert);
-  if (!_convertedDate) {
-    throw Error("Invalid Date");
+export const convertLocalDateTime = (_options: ConvertOptions) => {
+  if (
+    _options.stringDateToConvert === undefined ||
+    _options.stringDateToConvert === ""
+  ) {
+    throw new Error("Invalid Date");
   }
+  const _convertedDate = new Date(_options.stringDateToConvert);
 
-  const DateTimeOptions: any = includeTime
+  const DateTimeOptions: any = _options.includeTime
     ? {
         year: "numeric",
         month: "numeric",
