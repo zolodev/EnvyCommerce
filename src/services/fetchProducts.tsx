@@ -3,12 +3,12 @@ import fs from "fs";
 import path, { join } from "path";
 import { promisify } from "util";
 import { Product } from "../types";
+import { getLocalProductsPath } from "../utils/constants";
 import { convertProductFromContent } from "../utils/converter";
 import isPublished from "../utils/isPublished";
 
-const fetchLocalProducts = async () => {
-  const localContentPath = process.env.LOCAL_CONTENTS ?? "/Products";
-  const directory = join(process.cwd(), localContentPath);
+export const fetchLocalProducts = async () => {
+  const directory = join(process.cwd(), getLocalProductsPath());
   const filenames = fs.readdirSync(directory);
 
   const localProducts = filenames.map((filename) => {
@@ -34,7 +34,7 @@ const fetchLocalProducts = async () => {
   return productData.filter(Boolean);
 };
 
-const fetchExternalProducts = async () => {
+export const fetchExternalProducts = async () => {
   const productData: Product[] = [];
   const contentUrl = process.env.EXTERNAL_CONTENTS
     ? process.env.EXTERNAL_CONTENTS
