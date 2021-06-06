@@ -1,4 +1,4 @@
-export const isPublished = (
+const isPublished = (
   publishDate: string | Date,
   unpublishDate: string | Date
 ): Boolean => {
@@ -12,3 +12,5 @@ export const isPublished = (
 
   return isPublished && isNotUnpublished;
 };
+
+export default isPublished;

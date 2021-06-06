@@ -19,6 +19,7 @@ type ConvertOptions = {
 };
 export const convertLocalDateTime = (_options: ConvertOptions) => {
   if (
+    !_options ||
     _options.stringDateToConvert === undefined ||
     _options.stringDateToConvert === ""
   ) {

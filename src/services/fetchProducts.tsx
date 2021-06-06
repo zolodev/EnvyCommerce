@@ -4,7 +4,7 @@ import path, { join } from "path";
 import { promisify } from "util";
 import { Product } from "../types";
 import { convertProductFromContent } from "../utils/converter";
-import { isPublished } from "../utils/isPublished";
+import isPublished from "../utils/isPublished";
 
 const fetchLocalProducts = async () => {
   const localContentPath = process.env.LOCAL_CONTENTS ?? "/Products";

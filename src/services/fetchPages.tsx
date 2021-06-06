@@ -4,7 +4,7 @@ import path, { join } from "path";
 import { promisify } from "util";
 import { Page } from "../types";
 import { convertPageFromContent } from "../utils/converter";
-import { isPublished } from "../utils/isPublished";
+import isPublished from "../utils/isPublished";
 
 const fetchLocalPages = async () => {
   const localContentPath = process.env.LOCAL_PAGES_CONTENTS ?? "/Pages";
