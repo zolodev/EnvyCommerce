@@ -1,6 +1,7 @@
 import router from "next/router";
 import React from "react";
 import useCart from "../hooks/useCart";
+import { getCheckoutButtonText } from "../utils/constants";
 
 const CheckoutButton = () => {
   const { closeCart } = useCart();
@@ -16,7 +17,7 @@ const CheckoutButton = () => {
         onClick={handleCheckout}
         className="w-full p-2 font-semibold text-white uppercase bg-teal-700 rounded hover:bg-teal-900"
       >
-        {process.env.NEXT_PUBLIC_PRODUCT_CHECKOUT_DISPLAY_TEXT ?? "Checkout"}
+        {getCheckoutButtonText()}
       </button>
     </>
   );
