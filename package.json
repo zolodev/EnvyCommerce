@@ -12,11 +12,13 @@
     "dev:export": "yarn export && cd ./dist && python -m http.server --bind localhost",
     "export": "yarn build && next export -o dist",
     "build-prod": "yarn clean && yarn build && yarn export",
-    "clean": "rm -rf ./.next && rm -rf ./dist && rm -rf ./.coverage && rm -rf ./.husky",
+    "clean": "rm -rf ./.next && rm -rf ./dist && rm -rf ./.coverage && rm -rf ./.husky && rm ./public/preCompiledSearchIndex.json && rm ./public/products.json",
     "lint": "yarn run eslint --ext .tsx --ext .ts src/ --fix && npx prettier -c --write ./",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "predev": "node ./scripts/PreCompileProducts.js",
+    "prebuild": "node ./scripts/PreCompileProducts.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -44,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "autoprefixer": "^10.2.5",
+    "dotenv": "^10.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.25.0",
