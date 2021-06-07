@@ -42,6 +42,8 @@ export type Product = {
   price: number;
   slug: string;
   url: string;
-  YouTubeUrl: string;
+  collection?: string;
+  keywords?: string[];
+  YouTubeUrl?: string;
   content: string;
 };

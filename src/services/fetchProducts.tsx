@@ -79,3 +79,31 @@ export const getAllProducts = async () => {
   allProducts.push(...localProducts);
   return allProducts;
 };
+
+export const getCustomSearchIndex = async () => {
+  const arrIndexToReturn: string[] = [];
+  const searchIndexFilename = "preCompiledSearchIndex.json";
+  const directory = join(process.cwd(), "./public/");
+  const filenames = fs
+    .readdirSync(directory)
+    .filter((f) => f.toString() === searchIndexFilename);
+
+  const searchIndexContentPromise =
+    filenames.length > 0
+      ? filenames.map((filename) => {
+          const fileFullPath = join(directory, filename);
+          const readFile = promisify(fs.readFile);
+          return readFile(fileFullPath).then((fileContent) =>
+            fileContent.toString()
+          );
+        })
+      : "";
+  if (searchIndexContentPromise !== "") {
+    const responses = await Promise.all(searchIndexContentPromise);
+    const content = responses.filter(Boolean) as string[];
+    arrIndexToReturn.push(...content);
+  } else {
+    return null;
+  }
+  return arrIndexToReturn.filter(Boolean)[0];
+};

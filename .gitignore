@@ -22,6 +22,8 @@ dist/*
 .cache/
 *.pem
 /.husky
+/public/preCompiledSearchIndex.json
+/public/products.json
 
 # debug
 *.log

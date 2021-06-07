@@ -16,6 +16,7 @@ type Props = {
   collection: [];
   keys: string[];
   debounceTime?: number;
+  customSearchIndex?: string;
 };
 
 const useFuzzySearch = (_options: Props) => {
@@ -32,7 +33,14 @@ const useFuzzySearch = (_options: Props) => {
     query(e.currentTarget.value);
 
   useEffect(() => {
-    const fuse = new Fuse(_options.collection, fuseOptions);
+    const customSearchIndex = !!_options.customSearchIndex
+      ? Fuse.parseIndex<string>(JSON.parse(_options.customSearchIndex))
+      : undefined;
+
+    const fuse = !!customSearchIndex
+      ? new Fuse(_options.collection, fuseOptions, customSearchIndex)
+      : new Fuse(_options.collection, fuseOptions);
+
     const fuseResult = fuse.search(search);
     const result = fuseResult.map((r) => r.item) as [];
 
