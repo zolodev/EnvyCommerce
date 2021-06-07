@@ -35,7 +35,7 @@ const Cart = () => {
       </header>
       <div>
         {cart.length > 0 && (
-          <span className="m-8 text-xl border-b-2 border-gray-100">
+          <span className="flex justify-center m-8 text-xl border-b-2 border-gray-100">
             Items in cart
           </span>
         )}
