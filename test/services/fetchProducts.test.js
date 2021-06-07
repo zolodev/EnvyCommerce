@@ -3,7 +3,7 @@ import {
   fetchLocalProducts,
   getAllProducts,
   getAllPublishedProducts,
-} from "../src/services/fetchProducts";
+} from "../../src/services/fetchProducts";
 
 describe("Services - Test Fetch Products", () => {
   it("can fetchLocalProducts from markdown files", () => {

@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import Home, { getStaticProps } from "../src/pages/index";
+import Home, { getStaticProps } from "../../src/pages/index";
 
 const wrapper = shallow(<Home />);
 
