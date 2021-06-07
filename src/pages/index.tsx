@@ -16,6 +16,8 @@ const Home = (props: any) => {
     customSearchIndex: props.customSearchIndex,
   });
 
+  const showProductList = filterdList && filterdList.length > 0;
+
   return (
     <>
       <Head>
@@ -37,7 +39,7 @@ const Home = (props: any) => {
           aria-label="Search and filter products..."
           onChange={onSearch}
         />
-        {filterdList.length > 0 ? (
+        {showProductList ? (
           <ProductList data={filterdList} />
         ) : (
           <div className="container flex flex-col w-2/4 p-8 mx-auto mt-10 border-2">

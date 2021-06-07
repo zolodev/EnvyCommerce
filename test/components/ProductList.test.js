@@ -16,7 +16,7 @@ describe("Component - AddToCartButton", () => {
     expect(wrapper.find("Link").props().href).toContain(products[0].slug);
   });
   it("can render a product with a product price", () => {
-    expect(wrapper.find("footer p").text()).toContain(products[0].price);
+    expect(wrapper.find("footer p").text()).toContain("$" + products[0].price);
   });
   it("can render a product with a AddToCartButton", () => {
     expect(wrapper.find("AddToCartButton").html()).toBeTruthy();
