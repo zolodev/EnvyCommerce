@@ -3,7 +3,7 @@ import {
   getAllFilterKeys,
   getCheckoutButtonText,
   getProcessPaymentButtonText,
-} from "../src/utils/constants";
+} from "../src/constants";
 import {
   convertLocalDateTime,
   convertPageFromContent,

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { getProcessPaymentButtonText } from "../utils/constants";
+import { getProcessPaymentButtonText } from "../constants";
 
 const ProcessPaymentButton = () => {
   const router = useRouter();

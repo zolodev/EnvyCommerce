@@ -1,10 +1,10 @@
 import Head from "next/head";
 import React from "react";
 import ProductList from "../components/ProductList";
+import { getAllFilterKeys } from "../constants";
 import useFuzzySearch from "../hooks/useFuzzySearch";
 import { getAllPublishedProducts } from "../services/fetchProducts";
 import { Product } from "../types";
-import { getAllFilterKeys } from "../utils/constants";
 
 const Home = (props: any) => {
   const { filterdList, onSearch } = useFuzzySearch({

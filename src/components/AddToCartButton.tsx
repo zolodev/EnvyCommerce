@@ -1,7 +1,7 @@
 import React from "react";
+import { getAddToCartButtonText } from "../constants";
 import useCart from "../hooks/useCart";
 import { Product } from "../types";
-import { getAddToCartButtonText } from "../utils/constants";
 
 type Props = {
   product: Product;

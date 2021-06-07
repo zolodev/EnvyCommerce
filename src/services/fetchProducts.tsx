@@ -2,8 +2,8 @@ import axios from "axios";
 import fs from "fs";
 import path, { join } from "path";
 import { promisify } from "util";
+import { getLocalProductsPath } from "../constants";
 import { Product } from "../types";
-import { getLocalProductsPath } from "../utils/constants";
 import { convertProductFromContent } from "../utils/converter";
 import isPublished from "../utils/isPublished";
 

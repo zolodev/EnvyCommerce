@@ -1,7 +1,7 @@
 import router from "next/router";
 import React from "react";
+import { getCheckoutButtonText } from "../constants";
 import useCart from "../hooks/useCart";
-import { getCheckoutButtonText } from "../utils/constants";
 
 const CheckoutButton = () => {
   const { closeCart } = useCart();
