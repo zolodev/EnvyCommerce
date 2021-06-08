@@ -16,23 +16,21 @@ describe("Page - Test The Home Page Component", () => {
     // The getByRole will error if there are less or more than 1 element found
     expect(wrapper.find("main").type()).toBe("main");
   });
-
   it("should have an search input", () => {
     expect(wrapper.find("input[type='search']").type()).toBe("input");
   });
-
   it("the search field should have a placholder with text", () => {
     const searchField = wrapper.find("input");
     expect(searchField.props().placeholder).toBe(
       "Search and filter products..."
     );
   });
-
-  it("can get static props, allProducts", () => {
-    getStaticProps().then((data) => {
+  it("can get static props, allProducts", async () => {
+    const props = await getStaticProps().then((data) => {
       expect(data).toBeDefined();
       expect(data.props.allProducts).toBeDefined();
     });
+    expect(props).toBeFalsy();
   });
   it("can get static props, filtered keys from .env varible", () => {
     const expected = {
