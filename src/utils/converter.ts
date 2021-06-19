@@ -48,7 +48,7 @@ export const convertLocalDateTime = (_options: ConvertOptions) => {
 export const convertProductFromContent = (fileContent: string): Product => {
   const { data, content } = matter(fileContent);
   const slug = slugify(data.name, { lower: true });
-  const url = "/product/" + slug;
+  const url = `/product/${slug}`;
   const hero = getImageData(data.hero, `Product image for ${data.name}`);
   const images: ImageInfo[] = convertImagesToImageInfoList(
     data.images,
