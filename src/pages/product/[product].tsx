@@ -14,16 +14,16 @@ type ProductProps = {
 const ProductPage = ({ product }: ProductProps) => {
   const licenseText = process.env.NEXT_PUBLIC_GENERAL_LICENSE;
 
-  const productPublishedDateTime = !!product.published
+  const productPublishedDateTime = product.published
     ? convertLocalDateTime({
-        stringDateToConvert: product.published,
-      })
+      stringDateToConvert: product.published,
+    })
     : undefined;
 
-  const productUnpublishedDateTime = !!product.unpublish
+  const productUnpublishedDateTime = product.unpublish
     ? convertLocalDateTime({
-        stringDateToConvert: product.unpublish,
-      })
+      stringDateToConvert: product.unpublish,
+    })
     : undefined;
 
   const isDraft = !productPublishedDateTime;
@@ -35,7 +35,7 @@ const ProductPage = ({ product }: ProductProps) => {
           <meta
             property="article:published_time"
             content={productPublishedDateTime}
-          ></meta>
+          />
         )}
       </Head>
 
@@ -53,8 +53,8 @@ const ProductPage = ({ product }: ProductProps) => {
                   dateTime={productPublishedDateTime}
                   className="text-gray-400"
                 >
-                  {process.env.NEXT_PUBLIC_PRODUCT_PUBLISH_DATE_DISPLAY_TEXT ??
-                    "Published"}{" "}
+                  {process.env.NEXT_PUBLIC_PRODUCT_PUBLISH_DATE_DISPLAY_TEXT
+                    ?? "Published"}{" "}
                   {productPublishedDateTime}
                 </time>
               )}
@@ -65,8 +65,8 @@ const ProductPage = ({ product }: ProductProps) => {
                   className="text-red-400"
                 >
                   {process.env
-                    .NEXT_PUBLIC_PRODUCT_UNPUBLISH_DATE_DISPLAY_TEXT ??
-                    "Unpublished"}{" "}
+                    .NEXT_PUBLIC_PRODUCT_UNPUBLISH_DATE_DISPLAY_TEXT
+                    ?? "Unpublished"}{" "}
                   {productUnpublishedDateTime}
                 </time>
               )}
@@ -78,8 +78,8 @@ const ProductPage = ({ product }: ProductProps) => {
             )}
 
             <img
-              src={product.image.src}
-              alt={product.image.alt}
+              src={product.hero.src}
+              alt={product.hero.alt}
               className="flex flex-col max-w-lg mt-8"
             />
           </header>
@@ -106,8 +106,8 @@ const ProductPage = ({ product }: ProductProps) => {
         </main>
         <section className="p-4 border-t-2 description">
           <h3 className="my-4 text-3xl ">
-            {process.env.NEXT_PUBLIC_PRODUCT_DESCRIPTION_TITLE ??
-              "Product Description"}
+            {process.env.NEXT_PUBLIC_PRODUCT_DESCRIPTION_TITLE
+              ?? "Product Description"}
           </h3>
           <hr className="w-12 border-4 border-blue-500" />
           <div className="max-w-xl mt-5 text-justify ">
@@ -126,13 +126,11 @@ const ProductPage = ({ product }: ProductProps) => {
 export const getStaticPaths = async () => {
   const allProducts: Product[] = await getAllProducts();
 
-  const paths = allProducts.map((product: Product) => {
-    return {
-      params: {
-        product: product.slug,
-      },
-    };
-  });
+  const paths = allProducts.map((product: Product) => ({
+    params: {
+      product: product.slug,
+    },
+  }));
 
   return { paths, fallback: false };
 };
@@ -140,7 +138,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   const allProducts: Product[] = await getAllProducts();
   const product = allProducts.find(
-    (p) => p.slug === context.params.product
+    (p) => p.slug === context.params.product,
   ) as Product;
 
   return {

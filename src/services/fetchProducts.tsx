@@ -16,13 +16,12 @@ export const fetchLocalProducts = async () => {
     const fileToProcess = fs.lstatSync(fileFullPath);
 
     if (
-      !fileToProcess.isDirectory() &&
-      path.extname(fileFullPath).toLowerCase() === ".md"
+      !fileToProcess.isDirectory()
+      && path.extname(fileFullPath).toLowerCase() === ".md"
     ) {
       const readFile = promisify(fs.readFile);
       return readFile(fileFullPath).then((fileContent) =>
-        convertProductFromContent(fileContent.toString())
-      );
+        convertProductFromContent(fileContent.toString()));
     }
   });
 
@@ -43,8 +42,7 @@ export const fetchExternalProducts = async () => {
   if (contentUrl) {
     const response = await axios.get(contentUrl);
     const promises = response.data.map((result: { download_url: string }) =>
-      axios.get(result.download_url)
-    );
+      axios.get(result.download_url));
 
     const responses = await Promise.all(promises);
     const products = responses.map((rawFile) => {
@@ -64,9 +62,8 @@ export const getAllPublishedProducts = async () => {
 };
 
 export const getAllProducts = async () => {
-  const loadExternalProducts =
-    !!process.env.EXTERNAL_CONTENTS &&
-    process.env.EXTERNAL_CONTENTS.toLowerCase() !== "false";
+  const loadExternalProducts = !!process.env.EXTERNAL_CONTENTS
+    && process.env.EXTERNAL_CONTENTS.toLowerCase() !== "false";
 
   const allProducts: Product[] = [];
   const localProducts = await fetchLocalProducts();
@@ -88,16 +85,14 @@ export const getCustomSearchIndex = async () => {
     .readdirSync(directory)
     .filter((f) => f.toString() === searchIndexFilename);
 
-  const searchIndexContentPromise =
-    filenames.length > 0
-      ? filenames.map((filename) => {
-          const fileFullPath = join(directory, filename);
-          const readFile = promisify(fs.readFile);
-          return readFile(fileFullPath).then((fileContent) =>
-            fileContent.toString()
-          );
-        })
-      : "";
+  const searchIndexContentPromise = filenames.length > 0
+    ? filenames.map((filename) => {
+      const fileFullPath = join(directory, filename);
+      const readFile = promisify(fs.readFile);
+      return readFile(fileFullPath).then((fileContent) =>
+        fileContent.toString());
+    })
+    : "";
   if (searchIndexContentPromise !== "") {
     const responses = await Promise.all(searchIndexContentPromise);
     const content = responses.filter(Boolean) as string[];
