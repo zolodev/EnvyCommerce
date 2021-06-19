@@ -13,6 +13,7 @@ const AddToCartButton = ({ product }: Props) => {
   return (
     <>
       <button
+        type="button"
         onClick={handleAddToCart}
         className="w-full p-2 font-semibold text-white bg-teal-700 rounded hover:bg-teal-900"
       >

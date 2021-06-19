@@ -4,9 +4,7 @@ import { CartItem } from "../types";
 import { convertPrice } from "../utils/converter";
 
 const CartItemList = () => {
-  const {
-    cart, totalSumOfCart, addItemToCart, removeItemFromCart,
-  } = useCart();
+  const { cart, totalSumOfCart, addItemToCart, removeItemFromCart } = useCart();
 
   const handleAddOneToCart = (cartItem: CartItem) =>
     addItemToCart(cartItem.product, cartItem.quantity + 1);
@@ -21,10 +19,10 @@ const CartItemList = () => {
 
   const handleCustomValue = (
     e: React.ChangeEvent<HTMLInputElement>,
-    cartItem: CartItem,
+    cartItem: CartItem
   ) => {
-    if (Number.parseInt(e.target.value) > 0) {
-      addItemToCart(cartItem.product, Number.parseInt(e.target.value));
+    if (Number.parseInt(e.target.value, 10) > 0) {
+      addItemToCart(cartItem.product, Number.parseInt(e.target.value, 10));
     } else {
       removeItemFromCart(cartItem.product);
     }
@@ -45,6 +43,7 @@ const CartItemList = () => {
               >
                 <span className="flex justify-start max-h-8">
                   <button
+                    type="button"
                     className="w-8 h-8 font-semibold text-white bg-teal-700 hover:bg-teal-800"
                     onClick={() => handleRemoveOneFromCart(cartItem)}
                   >
@@ -58,6 +57,7 @@ const CartItemList = () => {
                     onChange={(e) => handleCustomValue(e, cartItem)}
                   />
                   <button
+                    type="button"
                     className="w-8 h-8 font-semibold text-white bg-teal-700 hover:bg-teal-800"
                     onClick={() => handleAddOneToCart(cartItem)}
                   >
@@ -70,6 +70,7 @@ const CartItemList = () => {
                 <span>{convertPrice(cartItem.product.price)}</span>
                 <span className="">
                   <button
+                    type="button"
                     onClick={() => handleRemoveItem(cartItem)}
                     className="ml-2"
                   >
