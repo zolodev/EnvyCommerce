@@ -18,24 +18,47 @@ name: Docker sticker
 # Used as a short description & excerpt
 description: A sticker with looking like the docker logo.
 
+# Variants
+variants:
+  - id: 101
+    name: "Medium"
+    short: "M"
+    price: 23
+  - id: 102
+    name: "Large"
+    short: "L"
+    price: 26
+
 # Will be converted to the local configuration
 price: 20
 
 # Product promotion text to the user, will appear on the product detail page above the "Add to cart" button
 promotion: Promotion only available until 31.12.2021
 
-# ThumbnailUrl | ImageUrl
-# image: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
-# Load a local image from public/images/...
-image: "/images/stickers-example.webp"
+# Hero Image
+# Used as the First impression to give the best presentation of the product
+# hero: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
+# Load a local image
+# hero: "/images/image.png"
+hero: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
 
-# Collection (single) can be considered as a category
-# One product can be in only one category
-collection: "Cool"
+# More product images can be listed on a new line below.
+images:
+  - "/images/stickers-example.webp"
+  - "/images/stickers-example.webp"
+
+# Collections can be considered as a category
+# One product can in multiple categorys
+collection:
+  - "Root collection"
+  - "leaf"
+  - "My sub collection"
 
 # Keywords can be considered as words the user can search for (minimum of 4 chars)
 # One product can have multiple keywords
-keywords: "sticks, awesome"
+keywords:
+  - "sticks"
+  - "awesome"
 
 # Add a YouTube video by adding the YouTube video url
 # YouTubeUrl: "M7lc1UVf-VE"
