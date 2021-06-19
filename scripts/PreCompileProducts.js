@@ -37,10 +37,6 @@ const fetchLocalProducts = async () => {
         const { data } = matter(fileContent.toString());
         const slug = slugify(data.name, { lower: true });
         const url = "/product/" + slug;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         return { ...data, slug, url };
       });
     }
