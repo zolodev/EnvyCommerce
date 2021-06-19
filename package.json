@@ -17,8 +17,8 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "predev": "node ./scripts/PreCompileProducts.js",
-    "prebuild": "node ./scripts/PreCompileProducts.js"
+    "predev": "node ./scripts/PreCompileProducts.js && node ./scripts/generate-sitemap.js",
+    "prebuild": "node ./scripts/PreCompileProducts.js && node ./scripts/generate-sitemap.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
