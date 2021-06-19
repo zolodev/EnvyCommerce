@@ -31,11 +31,24 @@ export type Page = {
   content: string;
 };
 
-export type ProductVariant = {
+export enum VariantGroupType {
+  DropDown = "dropdown",
+  Image = "image",
+  List = "list",
+}
+
+export type VariantGroup = {
+  name: string;
+  type: VariantGroupType;
+  items: VariantProduct[];
+};
+
+export type VariantProduct = {
   id: string;
   name: string;
   short: string;
-  price: number;
+  price?: number;
+  imageUrl?: ImageInfo;
 };
 
 export type Product = {
@@ -46,7 +59,7 @@ export type Product = {
   hero: ImageInfo;
   images: ImageInfo[];
   description: string;
-  variants: ProductVariant[];
+  variants?: VariantGroup[];
   promotion: string;
   price: number;
   slug: string;

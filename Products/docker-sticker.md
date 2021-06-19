@@ -20,14 +20,27 @@ description: A sticker with looking like the docker logo.
 
 # Variants
 variants:
-  - id: 101
-    name: "Medium"
-    short: "M"
-    price: 23
-  - id: 102
-    name: "Large"
-    short: "L"
-    price: 26
+  - name: "Size"
+    # GroupTypes: dropdown | image | list
+    type: dropdown
+    items:
+      - id: 101
+        name: "Medium"
+        short: "M"
+      - id: 102
+        name: "Large"
+        short: "L"
+  - name: "Color"
+    type: image
+    items:
+      - id: 103
+        name: "Full color"
+        short: "Full"
+        imageUrl: "/images/docker-sticker.jpg"
+      - id: 104
+        name: "Black and White"
+        short: "B&W"
+        imageUrl: "/images/docker-sticker.jpg"
 
 # Will be converted to the local configuration
 price: 20
