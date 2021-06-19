@@ -27,9 +27,11 @@ variants:
       - id: 101
         name: "Medium"
         short: "M"
+        price: 22
       - id: 102
         name: "Large"
         short: "L"
+        price: 26
   - name: "Color"
     type: image
     items:
