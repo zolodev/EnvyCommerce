@@ -5,6 +5,7 @@ import {
   getProcessPaymentButtonText,
 } from "../src/constants";
 import {
+  convertImagesToImageInfoList,
   convertLocalDateTime,
   convertPageFromContent,
   convertPrice,
@@ -186,6 +187,29 @@ describe("Test the utils", () => {
           "defaultSlugFilename"
         );
         expect(miniPage).toMatchObject(expectedMinimumProductObject);
+      });
+      it("can convert a list images to a list of type ImageInfo", () => {
+        const arrToConvert = ["/image/1.jpg", "/image/2.jpg"];
+        const expectedObject = [
+          {
+            src: "/image/1.jpg",
+            alt: "Product image for Test Name variant 1",
+            isDefaultImage: false,
+          },
+          {
+            src: "/image/2.jpg",
+            alt: "Product image for Test Name variant 2",
+            isDefaultImage: false,
+          },
+        ];
+
+        const resultToValidate = convertImagesToImageInfoList(
+          arrToConvert,
+          "Test Name"
+        );
+
+        expect(resultToValidate).toHaveLength(2);
+        expect(resultToValidate).toMatchObject(expectedObject);
       });
     });
   });
