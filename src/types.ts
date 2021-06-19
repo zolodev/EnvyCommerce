@@ -25,10 +25,17 @@ export type Page = {
   published: string;
   unpublish: string;
   name: string;
-  image: ImageInfo;
+  hero: ImageInfo;
   slug: string;
   url: string;
   content: string;
+};
+
+export type ProductVariant = {
+  id: string;
+  name: string;
+  short: string;
+  price: number;
 };
 
 export type Product = {
@@ -36,8 +43,10 @@ export type Product = {
   published: string;
   unpublish: string;
   name: string;
-  image: ImageInfo;
+  hero: ImageInfo;
+  images: ImageInfo[];
   description: string;
+  variants: ProductVariant[];
   promotion: string;
   price: number;
   slug: string;
