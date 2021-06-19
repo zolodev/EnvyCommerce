@@ -48,7 +48,7 @@ images:
   - "/images/stickers-example.webp"
 
 # Collections can be considered as a category
-# One product can in multiple categorys
+# One product can exist in multiple collections
 collection:
   - "Root collection"
   - "leaf"
