@@ -15,7 +15,7 @@ const ProductPage = (page: Page) => {
         </title>
       </Head>
 
-      {!page.image.isDefaultImage && <HeroImage image={page.image} />}
+      {!page.hero.isDefaultImage && <HeroImage image={page.hero} />}
       <div className="container mx-auto my-5 mb-20 px-96">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {page.content}
