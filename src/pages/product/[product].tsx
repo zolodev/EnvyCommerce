@@ -78,8 +78,8 @@ const ProductPage = ({ product }: ProductProps) => {
             )}
 
             <img
-              src={product.image.src}
-              alt={product.image.alt}
+              src={product.hero.src}
+              alt={product.hero.alt}
               className="flex flex-col max-w-lg mt-8"
             />
           </header>
