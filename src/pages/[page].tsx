@@ -6,35 +6,31 @@ import HeroImage from "../components/HeroImage";
 import { getAllPages } from "../services/fetchPages";
 import { Page } from "../types";
 
-const ProductPage = (page: Page) => {
-  return (
-    <>
-      <Head>
-        <title>
-          {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {page.name}
-        </title>
-      </Head>
+const ProductPage = (page: Page) => (
+  <>
+    <Head>
+      <title>
+        {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {page.name}
+      </title>
+    </Head>
 
-      {!page.image.isDefaultImage && <HeroImage image={page.image} />}
-      <div className="container mx-auto my-5 mb-20 px-96">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {page.content}
-        </ReactMarkdown>
-      </div>
-    </>
-  );
-};
+    {!page.image.isDefaultImage && <HeroImage image={page.image} />}
+    <div className="container mx-auto my-5 mb-20 px-96">
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {page.content}
+      </ReactMarkdown>
+    </div>
+  </>
+);
 
 export const getStaticPaths = async () => {
   const allPages: Page[] = await getAllPages();
 
-  const paths = allPages.map((page: Page) => {
-    return {
-      params: {
-        page: page.slug,
-      },
-    };
-  });
+  const paths = allPages.map((page: Page) => ({
+    params: {
+      page: page.slug,
+    },
+  }));
 
   return { paths, fallback: false };
 };
