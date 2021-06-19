@@ -16,7 +16,19 @@ const ProductList = ({ data }: ProductListProps) => (
         data.map((p: Product) => (
           <div key={p.id} className="m-5 border-2">
             <Link href={p.url}>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
               <a href={p.url}>
+=======
+              <a href="/#">
+>>>>>>> Stashed changes
+=======
+              <a href="/#">
+>>>>>>> Stashed changes
+=======
+              <a href="/#">
+>>>>>>> Stashed changes
                 <ProductItem product={p} />
               </a>
             </Link>
