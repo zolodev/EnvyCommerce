@@ -25,6 +25,7 @@ const Navigation = () => {
           <div className="flex flex-grow" />
           <div className="flex items-center justify-center flex-1">
             <button
+              type="button"
               className="relative flex"
               onClick={handleOpenCart}
               aria-label="Open Cart"

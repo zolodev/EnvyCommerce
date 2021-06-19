@@ -36,5 +36,8 @@ module.exports = {
     "no-use-before-define": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "object-curly-newline": "off",
+    "comma-dangle": "off",
+    "operator-linebreak": "off",
   },
 };

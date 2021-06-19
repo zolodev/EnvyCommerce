@@ -7,19 +7,18 @@ import { getAllPages } from "../services/fetchPages";
 import { Page } from "../types";
 
 const ProductPage = (page: Page) => {
+  const { name, hero, content } = page;
   return (
     <>
       <Head>
         <title>
-          {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {page.name}
+          {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {name}
         </title>
       </Head>
 
-      {!page.hero.isDefaultImage && <HeroImage image={page.hero} />}
+      {!hero.isDefaultImage && <HeroImage image={hero} />}
       <div className="container mx-auto my-5 mb-20 px-96">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {page.content}
-        </ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       </div>
     </>
   );
