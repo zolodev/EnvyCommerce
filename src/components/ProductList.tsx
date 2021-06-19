@@ -19,7 +19,11 @@ const ProductList = ({ data }: ProductListProps) => (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               <a href={p.url}>
+=======
+              <a href="/#">
+>>>>>>> Stashed changes
 =======
               <a href="/#">
 >>>>>>> Stashed changes
