@@ -16,7 +16,7 @@ const ProductList = ({ data }: ProductListProps) => (
         data.map((p: Product) => (
           <div key={p.id} className="m-5 border-2">
             <Link href={p.url}>
-              <a href="/#">
+              <a href={p.url}>
                 <ProductItem product={p} />
               </a>
             </Link>
