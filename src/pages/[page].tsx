@@ -28,13 +28,11 @@ const ProductPage = (page: Page) => {
 export const getStaticPaths = async () => {
   const allPages: Page[] = await getAllPages();
 
-  const paths = allPages.map((page: Page) => {
-    return {
-      params: {
-        page: page.slug,
-      },
-    };
-  });
+  const paths = allPages.map((page: Page) => ({
+    params: {
+      page: page.slug,
+    },
+  }));
 
   return { paths, fallback: false };
 };

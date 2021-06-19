@@ -59,16 +59,12 @@ const CartContextProvider = ({ children }: Props) => {
   const totalNumberOfItemsInCart = (): number =>
     cart
       .flatMap((i) => i.quantity)
-      .reduce((a, b) => {
-        return a + b;
-      }, 0);
+      .reduce((a, b) => a + b, 0);
 
   const totalSumOfCart = (): number =>
     cart
       .flatMap((i) => i.quantity * i.product.price)
-      .reduce((a, b) => {
-        return a + b;
-      }, 0);
+      .reduce((a, b) => a + b, 0);
 
   const exposed: Cart = {
     cart,

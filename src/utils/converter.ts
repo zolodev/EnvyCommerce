@@ -6,12 +6,11 @@ import getImageData from "./imageInfo";
 const localFormat = process.env.NEXT_PUBLIC_LOCALES ?? "en-US";
 const currencyFormat = process.env.NEXT_PUBLIC_CURRENCY ?? "USD";
 
-export const convertPrice = (price: number) => {
-  return new Intl.NumberFormat(localFormat, {
+export const convertPrice = (price: number) =>
+  new Intl.NumberFormat(localFormat, {
     style: "currency",
     currency: currencyFormat,
   }).format(price);
-};
 
 type ConvertOptions = {
   stringDateToConvert: string;
