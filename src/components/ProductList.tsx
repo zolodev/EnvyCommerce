@@ -9,12 +9,11 @@ type ProductListProps = {
   data: Product[];
 };
 
-const ProductList = ({ data }: ProductListProps) => {
-  return (
-    <>
-      <div className="flex flex-wrap justify-center lg:justify-start">
-        {data &&
-          data.map((p: Product) => (
+const ProductList = ({ data }: ProductListProps) => (
+  <>
+    <div className="flex flex-wrap justify-center lg:justify-start">
+      {data
+          && data.map((p: Product) => (
             <div key={p.id} className="m-5 border-2">
               <Link href={p.url}>
                 <a>
@@ -25,16 +24,15 @@ const ProductList = ({ data }: ProductListProps) => {
                 <p className="text-2xl text-white align-text-bottom ">
                   {convertPrice(p.price)}
                 </p>
-                <div className="flex flex-grow"></div>
+                <div className="flex flex-grow" />
                 <div>
                   <AddToCartButton product={p} />
                 </div>
               </footer>
             </div>
           ))}
-      </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
 
 export default ProductList;

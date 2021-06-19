@@ -22,7 +22,7 @@ const Navigation = () => {
               <Link href="/customer-service">Customer service</Link>
             </nav>
           </div>
-          <div className="flex flex-grow"></div>
+          <div className="flex flex-grow" />
           <div className="flex items-center justify-center flex-1">
             <button
               className="relative flex"

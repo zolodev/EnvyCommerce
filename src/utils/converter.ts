@@ -6,12 +6,10 @@ import getImageData from "./imageInfo";
 const localFormat = process.env.NEXT_PUBLIC_LOCALES ?? "en-US";
 const currencyFormat = process.env.NEXT_PUBLIC_CURRENCY ?? "USD";
 
-export const convertPrice = (price: number) => {
-  return new Intl.NumberFormat(localFormat, {
-    style: "currency",
-    currency: currencyFormat,
-  }).format(price);
-};
+export const convertPrice = (price: number) => new Intl.NumberFormat(localFormat, {
+  style: "currency",
+  currency: currencyFormat,
+}).format(price);
 
 type ConvertOptions = {
   stringDateToConvert: string;
@@ -19,9 +17,9 @@ type ConvertOptions = {
 };
 export const convertLocalDateTime = (_options: ConvertOptions) => {
   if (
-    !_options ||
-    _options.stringDateToConvert === undefined ||
-    _options.stringDateToConvert === ""
+    !_options
+    || _options.stringDateToConvert === undefined
+    || _options.stringDateToConvert === ""
   ) {
     throw new Error("Invalid Date");
   }
@@ -29,34 +27,36 @@ export const convertLocalDateTime = (_options: ConvertOptions) => {
 
   const DateTimeOptions: any = _options.includeTime
     ? {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      }
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    }
     : {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-      };
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    };
 
   return new Intl.DateTimeFormat(localFormat, DateTimeOptions).format(
-    _convertedDate
+    _convertedDate,
   );
 };
 
 export const convertProductFromContent = (fileContent: string): Product => {
   const { data, content } = matter(fileContent);
   const slug = slugify(data.name, { lower: true });
-  const url = "/product/" + slug;
+  const url = `/product/${slug}`;
   const image = getImageData(data.image, `Product image for ${data.name}`);
-  return { ...data, slug, url, image, content } as Product;
+  return {
+    ...data, slug, url, image, content,
+  } as Product;
 };
 
 export const convertPageFromContent = (
   fileContent: string,
-  filename: string
+  filename: string,
 ): Page => {
   const { data, content } = matter(fileContent);
   let pageToReturn = {} as Page;
@@ -65,11 +65,13 @@ export const convertPageFromContent = (
     const image = getImageData(
       data.image,
       `Hero image for page ${data.name}`,
-      "https://via.placeholder.com/3440x290?text=No%20Image"
+      "https://via.placeholder.com/3440x290?text=No%20Image",
     );
     const slug = slugify(data.name, { lower: true, strict: true });
     const url = slug;
-    pageToReturn = { ...data, slug, url, image, content } as Page;
+    pageToReturn = {
+      ...data, slug, url, image, content,
+    } as Page;
   } else {
     pageToReturn = {
       slug: slugify(filename, { lower: true }),

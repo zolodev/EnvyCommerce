@@ -8,13 +8,14 @@ type Props = {
 };
 const HeroImage = ({ image }: Props) => {
   const imageSlug = slugify(image.src, { lower: true, strict: true });
-  const heroName = "hero-" + imageSlug;
+  const heroName = `hero-${imageSlug}`;
   return (
     <>
       <Head>
         <style
           key={imageSlug}
-        >{`.${heroName} {background-image: url(${image.src})}`}</style>
+        >{`.${heroName} {background-image: url(${image.src})}`}
+        </style>
       </Head>
 
       <div
@@ -22,7 +23,7 @@ const HeroImage = ({ image }: Props) => {
         role="img"
         aria-label={image.alt}
         tabIndex={-1}
-      ></div>
+      />
     </>
   );
 };

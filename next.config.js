@@ -9,9 +9,6 @@ module.exports = {
   generateBuildId: async () => nextBuildId({ dir: __dirname, describe: true }),
   poweredByHeader: false,
   compress: true,
-  future: {
-    webpack5: true,
-  },
   env: {
     anotherEnv: "Can contain data..",
   },
