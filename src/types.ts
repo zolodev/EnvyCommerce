@@ -31,13 +31,6 @@ export type Page = {
   content: string;
 };
 
-export type ProductVariant = {
-  id: string;
-  name: string;
-  short: string;
-  price: number;
-};
-
 export type Product = {
   id: string;
   published: string;
@@ -46,7 +39,6 @@ export type Product = {
   hero: ImageInfo;
   images: ImageInfo[];
   description: string;
-  variants: ProductVariant[];
   promotion: string;
   price: number;
   slug: string;
