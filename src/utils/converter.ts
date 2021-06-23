@@ -16,7 +16,7 @@ type ConvertOptions = {
   stringDateToConvert: string;
   includeTime?: boolean;
 };
-export const convertLocalDateTime = (_options: ConvertOptions) => {
+export const convertLocalDateTime = (_options?: ConvertOptions) => {
   if (
     !_options ||
     _options.stringDateToConvert === undefined ||

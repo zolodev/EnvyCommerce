@@ -37,12 +37,12 @@ export type Product = {
   unpublish: string;
   name: string;
   hero: ImageInfo;
-  images: ImageInfo[];
   description: string;
-  promotion: string;
   price: number;
   slug: string;
   url: string;
+  images?: ImageInfo[];
+  promotion?: string;
   collection?: string;
   keywords?: string[];
   YouTubeUrl?: string;
