@@ -11,7 +11,8 @@ import { Product } from "../types";
 
 const Home = (props: any) => {
   const { allProducts, filterKeys, customSearchIndex } = props;
-  let filterdList, onSearch;
+  let filterdList: any[] = [];
+  let onSearch;
 
   if (allProducts && filterKeys && customSearchIndex) {
     const fuzzy = useFuzzySearch({

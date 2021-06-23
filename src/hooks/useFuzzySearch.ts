@@ -25,7 +25,7 @@ const useFuzzySearch = (_options: Props) => {
   const search = useDebounce(rawSearch, _options.debounceTime ?? 500);
   const fuseOptions = useMemo(
     () => ({ ...DEFAULT_FUSE_OPTIONS, keys: _options.keys }),
-    [_options.keys],
+    [_options.keys]
   );
 
   const query = (value: string) => setSearch(value);
