@@ -51,14 +51,14 @@ describe("Test the utils", () => {
       });
       it("can not convert number to date", () => {
         const convertedDate = convertLocalDateTime({
-          stringDateToConvert: 20210501,
+          stringDateToConvert: 20210501 as unknown as string,
         });
         expect(convertedDate).toBe("1/1/1970");
       });
       it("can throw error in case of date is undefined", () => {
         const convertedDate = () =>
           convertLocalDateTime({
-            stringDateToConvert: undefined,
+            stringDateToConvert: undefined as unknown as string,
           });
 
         expect(convertedDate).toThrow("Invalid Date");

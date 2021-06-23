@@ -18,17 +18,6 @@ name: Docker sticker
 # Used as a short description & excerpt
 description: A sticker with looking like the docker logo.
 
-# Variants
-variants:
-  - id: 101
-    name: "Medium"
-    short: "M"
-    price: 23
-  - id: 102
-    name: "Large"
-    short: "L"
-    price: 26
-
 # Will be converted to the local configuration
 price: 20
 

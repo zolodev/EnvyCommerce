@@ -31,26 +31,18 @@ export type Page = {
   content: string;
 };
 
-export type ProductVariant = {
-  id: string;
-  name: string;
-  short: string;
-  price: number;
-};
-
 export type Product = {
   id: string;
   published: string;
   unpublish: string;
   name: string;
   hero: ImageInfo;
-  images: ImageInfo[];
   description: string;
-  variants: ProductVariant[];
-  promotion: string;
   price: number;
   slug: string;
   url: string;
+  images?: ImageInfo[];
+  promotion?: string;
   collection?: string;
   keywords?: string[];
   YouTubeUrl?: string;
