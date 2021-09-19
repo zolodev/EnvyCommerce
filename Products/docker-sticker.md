@@ -1,4 +1,8 @@
 ---
+# All published products will be auto generated and indexed on the following urls
+# <baseUrl>/products.json
+# <base>/preCompiledSearchIndex.json
+
 # Identifier, could be used for SKU
 id: 100
 
@@ -20,10 +24,30 @@ price: 20
 # Product promotion text to the user, will appear on the product detail page above the "Add to cart" button
 promotion: Promotion only available until 31.12.2021
 
-# ThumbnailUrl | ImageUrl
-# image: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
-# Load a local image from public/images/...
-image: "/images/stickers-example.webp"
+# Hero Image
+# Used as the First impression to give the best presentation of the product
+# hero: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
+# Load a local image
+# hero: "/images/image.png"
+hero: "https://images.unsplash.com/photo-1520218750893-2be45c7cbf63"
+
+# More product images can be listed on a new line below.
+images:
+  - "/images/stickers-example.webp"
+  - "/images/stickers-example.webp"
+
+# Collections can be considered as a category
+# One product can exist in multiple collections
+collection:
+  - "Root collection"
+  - "leaf"
+  - "My sub collection"
+
+# Keywords can be considered as words the user can search for (minimum of 4 chars)
+# One product can have multiple keywords
+keywords:
+  - "sticks"
+  - "awesome"
 
 # Add a YouTube video by adding the YouTube video url
 # YouTubeUrl: "M7lc1UVf-VE"

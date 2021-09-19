@@ -1,6 +1,6 @@
 const isPublished = (
-  publishDate: string | Date,
-  unpublishDate: string | Date
+  publishDate?: string | Date,
+  unpublishDate?: string | Date
 ): Boolean => {
   const DateNow = new Date().getTime();
 

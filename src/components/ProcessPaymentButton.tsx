@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import { getProcessPaymentButtonText } from "../constants";
 
 const ProcessPaymentButton = () => {
   const router = useRouter();
@@ -11,11 +12,11 @@ const ProcessPaymentButton = () => {
   return (
     <>
       <button
+        type="button"
         onClick={handleProcessPayment}
         className="w-full p-2 font-semibold text-white uppercase bg-teal-700 rounded hover:bg-teal-900"
       >
-        {process.env.NEXT_PUBLIC_PRODUCT_PROCESS_PAYMENT_DISPLAY_TEXT ??
-          "Process Payment"}
+        {getProcessPaymentButtonText()}
       </button>
     </>
   );

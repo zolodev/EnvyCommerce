@@ -1,5 +1,11 @@
-import { getAllFilterKeys } from "../src/utils/constants";
 import {
+  getAddToCartButtonText,
+  getAllFilterKeys,
+  getCheckoutButtonText,
+  getProcessPaymentButtonText,
+} from "../src/constants";
+import {
+  convertImagesToImageInfoList,
   convertLocalDateTime,
   convertPageFromContent,
   convertPrice,
@@ -45,14 +51,14 @@ describe("Test the utils", () => {
       });
       it("can not convert number to date", () => {
         const convertedDate = convertLocalDateTime({
-          stringDateToConvert: 20210501,
+          stringDateToConvert: 20210501 as unknown as string,
         });
         expect(convertedDate).toBe("1/1/1970");
       });
       it("can throw error in case of date is undefined", () => {
         const convertedDate = () =>
           convertLocalDateTime({
-            stringDateToConvert: undefined,
+            stringDateToConvert: undefined as unknown as string,
           });
 
         expect(convertedDate).toThrow("Invalid Date");
@@ -139,7 +145,7 @@ describe("Test the utils", () => {
       const filecontentWithMetadataString =
         '---\nid: 13\n# published: "2020-05-13"\nname: Nike Air Pegasus size 38\ndescription: A plain modern shoe.\nprice: 289\n---\n\n## Nike Air Pegasus\n\nThe content of the pegasus can be written here...\n\n![nike shoe](https://i.imgur.com/hBsNuWe.jpg)\n';
 
-      const expectedProductMetadataObject = {
+      const expectedProductWithMetadata = {
         id: 13,
         name: "Nike Air Pegasus size 38",
         description: "A plain modern shoe.",
@@ -148,7 +154,7 @@ describe("Test the utils", () => {
         url: "/product/nike-air-pegasus-size-38",
       };
 
-      const expectedPageMetadataObject = {
+      const expectedPageWithMetadata = {
         id: 13,
         name: "Nike Air Pegasus size 38",
         description: "A plain modern shoe.",
@@ -166,14 +172,14 @@ describe("Test the utils", () => {
         const aProduct = convertProductFromContent(
           filecontentWithMetadataString
         );
-        expect(aProduct).toMatchObject(expectedProductMetadataObject);
+        expect(aProduct).toMatchObject(expectedProductWithMetadata);
       });
       it("can convert to page from markdown content", () => {
         const aPage = convertPageFromContent(
           filecontentWithMetadataString,
           "defaultSlugFilename"
         );
-        expect(aPage).toMatchObject(expectedPageMetadataObject);
+        expect(aPage).toMatchObject(expectedPageWithMetadata);
       });
       it("can convert to page from markdown content no metadata", () => {
         const miniPage = convertPageFromContent(
@@ -181,6 +187,29 @@ describe("Test the utils", () => {
           "defaultSlugFilename"
         );
         expect(miniPage).toMatchObject(expectedMinimumProductObject);
+      });
+      it("can convert a list images to a list of type ImageInfo", () => {
+        const arrToConvert = ["/image/1.jpg", "/image/2.jpg"];
+        const expectedObject = [
+          {
+            src: "/image/1.jpg",
+            alt: "Product image for Test Name variant 1",
+            isDefaultImage: false,
+          },
+          {
+            src: "/image/2.jpg",
+            alt: "Product image for Test Name variant 2",
+            isDefaultImage: false,
+          },
+        ];
+
+        const resultToValidate = convertImagesToImageInfoList(
+          arrToConvert,
+          "Test Name"
+        );
+
+        expect(resultToValidate).toHaveLength(2);
+        expect(resultToValidate).toMatchObject(expectedObject);
       });
     });
   });
@@ -244,6 +273,35 @@ describe("Test the utils", () => {
       });
 
       expect(getAllFilterKeys()).toMatchObject(["name", "description"]);
+    });
+    it("can get AddToCartButton default text", () => {
+      expect(getAddToCartButtonText()).toBe("Add to cart");
+    });
+    it("can get AddToCartButton by env variabel", () => {
+      process.env = Object.assign(process.env, {
+        NEXT_PUBLIC_PRODUCT_ADD_TO_CART_DISPLAY_TEXT: "Yet another Add to cart",
+      });
+      expect(getAddToCartButtonText()).toBe("Yet another Add to cart");
+    });
+    it("can get CheckoutButton default text", () => {
+      expect(getCheckoutButtonText()).toBe("Checkout");
+    });
+    it("can get CheckoutButton by env variabel", () => {
+      process.env = Object.assign(process.env, {
+        NEXT_PUBLIC_PRODUCT_CHECKOUT_DISPLAY_TEXT: "Yet another Checkout",
+      });
+      expect(getCheckoutButtonText()).toBe("Yet another Checkout");
+    });
+
+    it("can get ProcessPaymentButton default text", () => {
+      expect(getProcessPaymentButtonText()).toBe("Process Payment");
+    });
+    it("can get ProcessPaymentButton text by env variabel", () => {
+      process.env = Object.assign(process.env, {
+        NEXT_PUBLIC_PRODUCT_PROCESS_PAYMENT_DISPLAY_TEXT:
+          "Yet another Process Payment",
+      });
+      expect(getProcessPaymentButtonText()).toBe("Yet another Process Payment");
     });
   });
 });

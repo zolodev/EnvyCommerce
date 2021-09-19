@@ -22,6 +22,10 @@ dist/*
 .cache/
 *.pem
 /.husky
+/public/preCompiledSearchIndex.json
+/public/products.json
+/public/sitemap.xml
+
 
 # debug
 *.log

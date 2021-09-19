@@ -7,19 +7,18 @@ import { getAllPages } from "../services/fetchPages";
 import { Page } from "../types";
 
 const ProductPage = (page: Page) => {
+  const { name, hero, content } = page;
   return (
     <>
       <Head>
         <title>
-          {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {page.name}
+          {process.env.NEXT_PUBLIC_CORPORATE_TITLE} - {name}
         </title>
       </Head>
 
-      {!page.image.isDefaultImage && <HeroImage image={page.image} />}
+      {!hero.isDefaultImage && <HeroImage image={hero} />}
       <div className="container mx-auto my-5 mb-20 px-96">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {page.content}
-        </ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       </div>
     </>
   );
@@ -28,13 +27,11 @@ const ProductPage = (page: Page) => {
 export const getStaticPaths = async () => {
   const allPages: Page[] = await getAllPages();
 
-  const paths = allPages.map((page: Page) => {
-    return {
-      params: {
-        page: page.slug,
-      },
-    };
-  });
+  const paths = allPages.map((page: Page) => ({
+    params: {
+      page: page.slug,
+    },
+  }));
 
   return { paths, fallback: false };
 };

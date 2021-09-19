@@ -16,7 +16,7 @@ const Cart = () => {
     >
       <header className="flex justify-between p-4 shadow-md">
         <span className="text-3xl font-semibold">Cart</span>
-        <button onClick={handleCloseCart} aria-label="Close Cart">
+        <button type="button" onClick={handleCloseCart} aria-label="Close Cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-8 h-8"
@@ -35,7 +35,7 @@ const Cart = () => {
       </header>
       <div>
         {cart.length > 0 && (
-          <span className="m-8 text-xl border-b-2 border-gray-100">
+          <span className="flex justify-center m-8 text-xl border-b-2 border-gray-100">
             Items in cart
           </span>
         )}

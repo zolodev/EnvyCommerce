@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "tailwind.config.js",
-    "next.config.js"
+    "next.config.js",
+    "test/setup.js"
   ],
   "exclude": ["node_modules"]
 }

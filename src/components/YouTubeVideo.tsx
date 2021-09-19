@@ -6,38 +6,38 @@ type Props = {
   url: string;
   width?: string;
   height?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  width: "1280", // YouTube default value: 560
+  height: "720", // YouTube default value: 315
 };
 
 const YouTubeVideo = (props: Props) => {
-  const width = props.width ?? "1280"; // YouTube default value: 560
-  const height = props.width ?? "720"; // YouTube default value: 315
+  const { url, width, height } = props;
+  const YouTubeID = convertYouTubeUrlToID(url);
+  const videoUrl = `https://www.youtube.com/embed/${YouTubeID}?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1`;
 
-  const YouTubeID = convertYouTubeUrlToID(props.url);
-  const videoUrl =
-    "https://www.youtube.com/embed/" +
-    YouTubeID +
-    "?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1";
-
-  https: return (
+  return (
     <>
       <Head>
-        <script
-          type="text/javascript"
-          src="/js/custom-youtube-player.js"
-        ></script>
+        <script type="text/javascript" src="/js/custom-youtube-player.js" />
       </Head>
       <div className="hytPlayerWrapOuter">
         <div className="hytPlayerWrap">
           <iframe
+            title={YouTubeID}
             width={width}
             height={height}
             src={videoUrl}
             frameBorder="0"
-          ></iframe>
+          />
         </div>
       </div>
     </>
   );
 };
+
+YouTubeVideo.defaultProps = defaultProps;
 
 export default YouTubeVideo;

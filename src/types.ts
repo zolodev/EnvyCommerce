@@ -25,7 +25,7 @@ export type Page = {
   published: string;
   unpublish: string;
   name: string;
-  image: ImageInfo;
+  hero: ImageInfo;
   slug: string;
   url: string;
   content: string;
@@ -36,12 +36,15 @@ export type Product = {
   published: string;
   unpublish: string;
   name: string;
-  image: ImageInfo;
+  hero: ImageInfo;
   description: string;
-  promotion: string;
   price: number;
   slug: string;
   url: string;
-  YouTubeUrl: string;
+  images?: ImageInfo[];
+  promotion?: string;
+  collection?: string;
+  keywords?: string[];
+  YouTubeUrl?: string;
   content: string;
 };

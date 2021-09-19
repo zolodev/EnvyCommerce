@@ -16,16 +16,15 @@ const fetchLocalPages = async () => {
     const fileToProcess = fs.lstatSync(fileFullPath);
 
     if (
-      !fileToProcess.isDirectory() &&
-      path.extname(fileFullPath).toLowerCase() === ".md"
+      !fileToProcess.isDirectory()
+      && path.extname(fileFullPath).toLowerCase() === ".md"
     ) {
       const readFile = promisify(fs.readFile);
       return readFile(fileFullPath).then((fileContent) =>
         convertPageFromContent(
           fileContent.toString(),
-          filename.replace(path.extname(fileFullPath), "")
-        )
-      );
+          filename.replace(path.extname(fileFullPath), ""),
+        ));
     }
   });
 
@@ -46,8 +45,7 @@ const fetchExternalPages = async () => {
   if (contentUrl) {
     const response = await axios.get(contentUrl);
     const promises = response.data.map((result: { download_url: string }) =>
-      axios.get(result.download_url)
-    );
+      axios.get(result.download_url));
 
     const responses = await Promise.all(promises);
     const pages = responses.map((rawFile, index) => {
@@ -66,9 +64,8 @@ export const getAllPublishedPages = async () => {
 };
 
 export const getAllPages = async () => {
-  const loadExternalPages =
-    !!process.env.EXTERNAL_CONTENTS &&
-    process.env.EXTERNAL_CONTENTS.toLowerCase() !== "false";
+  const loadExternalPages = !!process.env.EXTERNAL_CONTENTS
+    && process.env.EXTERNAL_CONTENTS.toLowerCase() !== "false";
 
   const allPages: Page[] = [];
   const localPages = await fetchLocalPages();
