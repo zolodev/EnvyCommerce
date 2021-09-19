@@ -10,7 +10,7 @@ module.exports = {
   poweredByHeader: false,
   compress: true,
   future: {
-    webpack5: true,
+    // webpack5: true,
   },
   env: {
     anotherEnv: "Can contain data..",
