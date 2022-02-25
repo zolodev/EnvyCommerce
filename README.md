@@ -2,6 +2,10 @@
 
 Production ready: **NO**.
 
+## Known problems
+
+> EnvyCommerce does not work correctly on Windows. The problem is that it only shows 404 page. Reason is unknown.
+
 This project is still a _Work in Progress_.
 
 If you want to support the cause and our work please reach out by creating an issue.
