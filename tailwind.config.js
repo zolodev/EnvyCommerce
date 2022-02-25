@@ -1,7 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: [
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -12,7 +12,7 @@ module.exports = {
       // Build your palette here
       transparent: "transparent",
       current: "currentColor",
-      gray: colors.trueGray,
+      gray: colors.neutral,
       red: colors.red,
       blue: colors.sky,
       yellow: colors.amber,
@@ -22,7 +22,7 @@ module.exports = {
       pink: colors.pink,
       black: colors.black,
       white: colors.white,
-      blueGray: colors.blueGray,
+      blueGray: colors.slate,
     },
   },
   variants: {
