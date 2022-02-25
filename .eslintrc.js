@@ -33,6 +33,7 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/function-component-definition": "off",
     "no-use-before-define": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
