@@ -10,9 +10,8 @@ type ProductListProps = {
 };
 
 const ProductList = ({ data }: ProductListProps) => (
-  <>
-    <div className="flex flex-wrap justify-center lg:justify-start">
-      {data &&
+  <div className="flex flex-wrap justify-center lg:justify-start">
+    {data &&
         data.map((p: Product) => (
           <div key={p.id} className="m-5 border-2">
             <Link href={p.url}>
@@ -31,8 +30,7 @@ const ProductList = ({ data }: ProductListProps) => (
             </footer>
           </div>
         ))}
-    </div>
-  </>
+  </div>
 );
 
 export default ProductList;

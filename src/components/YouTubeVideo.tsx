@@ -13,7 +13,7 @@ const defaultProps = {
   height: "720", // YouTube default value: 315
 };
 
-const YouTubeVideo = (props: Props) => {
+function YouTubeVideo(props: Props) {
   const { url, width, height } = props;
   const YouTubeID = convertYouTubeUrlToID(url);
   const videoUrl = `https://www.youtube.com/embed/${YouTubeID}?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1`;
@@ -36,7 +36,7 @@ const YouTubeVideo = (props: Props) => {
       </div>
     </>
   );
-};
+}
 
 YouTubeVideo.defaultProps = defaultProps;
 

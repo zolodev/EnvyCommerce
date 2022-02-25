@@ -16,6 +16,7 @@ module.exports = {
     "plugin:import/typescript",
     "airbnb",
     "plugin:jest/recommended",
+    "plugin:@next/next/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -33,11 +34,14 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/function-component-definition": "off",
     "no-use-before-define": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "object-curly-newline": "off",
     "comma-dangle": "off",
     "operator-linebreak": "off",
+    "@next/next/no-img-element": "off",
+    "@next/next/no-sync-scripts": "off",
   },
 };

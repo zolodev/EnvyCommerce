@@ -8,14 +8,12 @@ import "../styles/tailwind.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <CartContextProvider>
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
-        <Cart />
-      </CartContextProvider>
-    </>
+    <CartContextProvider>
+      <Navigation />
+      <Component {...pageProps} />
+      <Footer />
+      <Cart />
+    </CartContextProvider>
   );
 }
 
