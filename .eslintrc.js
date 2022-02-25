@@ -16,6 +16,7 @@ module.exports = {
     "plugin:import/typescript",
     "airbnb",
     "plugin:jest/recommended",
+    "plugin:@next/next/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -40,5 +41,7 @@ module.exports = {
     "object-curly-newline": "off",
     "comma-dangle": "off",
     "operator-linebreak": "off",
+    "@next/next/no-img-element": "off",
+    "@next/next/no-sync-scripts": "off",
   },
 };
