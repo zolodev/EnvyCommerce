@@ -7,8 +7,10 @@ Production ready: **NO**.
 > EnvyCommerce does not work correctly on Windows. The problem is that it only shows 404 page. Reason is unknown.
 
 This project is still a _Work in Progress_.
+This project was initial a personal project, to learn more about React, NextJS and Tailwind.
+EnvyCommerce is deliverd AS-IS and with ABSOLUTELY NO WARRANTY. For more information, please read the LICENSE.
 
-If you want to support the cause and our work please reach out by creating an issue.
+If you want to support the cause and the work please reach out by creating an issue.
 
 ## Background to EnvyCommerce
 
