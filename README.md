@@ -2,6 +2,8 @@
 
 Production ready: **NO**.
 
+![EnvyCommerce Demo](https://raw.githubusercontent.com/zolodev/EnvyCommerce/main/doc/EnvyDemo.gif)
+
 ## Known problems
 
 > EnvyCommerce does not work correctly on Windows. The problem is that it only shows 404 page. Reason is unknown.
