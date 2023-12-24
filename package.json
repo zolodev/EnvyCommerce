@@ -21,7 +21,7 @@
     "prebuild": "node ./scripts/PreCompileProducts.js && node ./scripts/generate-sitemap.js"
   },
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^1.6.0",
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
     "marked": "^4.0.10",
